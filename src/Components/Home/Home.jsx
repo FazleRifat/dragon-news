@@ -1,3 +1,4 @@
+import News from "../News/News";
 import Header from "../Shared/Header/Header";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
 import Navbar from "../Shared/Navbar/Navbar";
@@ -13,7 +14,7 @@ const Home = () => {
                 <div>
                     <LeftSideNav></LeftSideNav>
                 </div>
-                <div className="md:col-span-2"> <h1 className="text-2xl">News is coming soon....</h1></div>
+                <div className="md:col-span-2 ml-20"> <News></News></div>
                 <div>
                     <RightSideNav></RightSideNav>
                 </div>

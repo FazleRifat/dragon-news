@@ -6,7 +6,7 @@ import classs from '../../../assets/qZone2.png'
 import play from '../../../assets/qZone3.png'
 const RightSideNav = () => {
   return (
-    <div className="h-screen">
+    <div>
       {/* login with */}
       <div>
         <h1 className="text-xl font-semibold text-center md:text-left">
