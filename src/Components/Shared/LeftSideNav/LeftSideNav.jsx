@@ -12,10 +12,10 @@ const LeftSideNav = () => {
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);
-  console.log(categories);
+  
   return (
     <div>
-      <h1 className="text-2xl">All Caterogy</h1>
+      <h1 className="text-xl font-semibold text-center md:text-left">All Caterogy</h1>
       <ul>
         {categories.map((category) => (
           <li

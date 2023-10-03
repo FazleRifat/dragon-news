@@ -13,9 +13,10 @@ const News = () => {
 
   return (
     <div >
+        <h1 className="text-xl font-semibold text-center md:text-left">Dragon News</h1>
       {allNews.map((news) => (
         <div key={news.id}>
-          <div className="card w-full bg-base-100 shadow-xl mb-5">
+          <div className="card w-full bg-base-100 shadow-xl mt-5">
             <div className="bg-base-300 p-5 mb-3 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div>
