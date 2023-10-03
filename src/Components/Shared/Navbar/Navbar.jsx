@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import loginLogo from "../../../assets/user.png"
@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 flex items-center">
       <div className="navbar-start">
         <div className="dropdown md:hidden" onClick={()=> setShow(!show)}>
             {show?<AiOutlineClose className="text-4xl"></AiOutlineClose > :<FaBars className="text-4xl"></FaBars>}
@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-2">
         <img src={loginLogo} className="w-12"></img>
-        <a className="btn btn-neutral w-24 rounded-sm">Login</a>
+        <a className="btn btn-neutral w-24 rounded-sm" ><Link to='/login' target="_blank">Login</Link></a>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const Home = () => {
                 <div>
                     <LeftSideNav></LeftSideNav>
                 </div>
-                <div className="md:col-span-2 md:ml-20"> <News></News></div>
+                <div className="md:col-span-2 md:ml-10"> <News></News></div>
                 <div>
                     <RightSideNav></RightSideNav>
                 </div>
