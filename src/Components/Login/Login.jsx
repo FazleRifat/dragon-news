@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Authprovider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
+    const {handleLogin} = useContext(AuthContext)
+    const handleSubmit =(e)=>{
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        handleLogin(email,password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            toast.error(error.message);
+        })
+    }
   return (
     <div className=" bg-base-100 ">
       <div className="mt-8">
@@ -13,7 +29,7 @@ const Login = () => {
             Login your account
           </h2>
           <hr className="mx-auto w-96" />
-          <form className="card-body ml-14 mr-20">
+          <form className="card-body ml-14 mr-20" onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label" htmlFor="emal">
                 <span className="label-text font-semibold">Email address</span>
@@ -50,6 +66,7 @@ const Login = () => {
             </div>
           </form>
           <p className="text-sm text-center pb-7 ">Dont have an account? <Link to="/register" className="text-error">Register</Link></p>
+          <Toaster></Toaster>
         </div>
       </div>
     </div>

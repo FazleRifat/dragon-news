@@ -2,10 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import loginLogo from "../../../assets/user.png"
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Authprovider/AuthProvider";
 
 const Navbar = () => {
     const [show,setShow] = useState(false)
+    const {user,handleLogout} = useContext(AuthContext)
   const navlinks = (
     <>
       <li className="text-gray-400">
@@ -64,7 +66,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-2">
         <img src={loginLogo} className="w-12"></img>
-        <a className="btn btn-neutral w-24 rounded-sm" ><Link to='/login' target="_blank">Login</Link></a>
+        {
+          user?<a className="btn btn-neutral w-24 rounded-sm" onClick={handleLogout} >Logout</a>:<a className="btn btn-neutral w-24 rounded-sm" ><Link to='/login' target="_blank">Login</Link></a>
+        }
       </div>
     </div>
   );

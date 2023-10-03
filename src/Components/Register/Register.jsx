@@ -1,8 +1,27 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Authprovider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
+
 
 
 const Register = () => {
+    const {handleRegister } = useContext(AuthContext)
+    const handleSubmit =(e)=>{
+    
+        e.preventDefault()
+        // const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value
+        handleRegister(email,password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            toast.error(error.message);
+        })
+    }
   return (
     <div>
       <div className=" bg-base-100 ">
@@ -15,7 +34,7 @@ const Register = () => {
             Register your account
             </h2>
             <hr className="mx-auto w-96" />
-            <form className="card-body ml-14 mr-20">
+            <form className="card-body ml-14 mr-20" onSubmit={handleSubmit}>
             <div className="form-control">
                 <label className="label" htmlFor="name">
                   <span className="label-text font-semibold">
@@ -65,6 +84,7 @@ const Register = () => {
                 <button className="btn btn-neutral">Register</button>
               </div>
             </form>
+            <Toaster></Toaster>
           </div>
         </div>
       </div>
