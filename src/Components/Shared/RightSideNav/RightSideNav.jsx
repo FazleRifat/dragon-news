@@ -62,13 +62,13 @@ const RightSideNav = () => {
           Q-zone
         </h1>
         <div>
-            <img src={swim} alt="" />
+            <img src={swim} className="w-full" alt="" />
         </div>
         <div>
-            <img src={classs} alt="" />
+            <img src={classs} className="w-full" alt="" />
         </div>
         <div>
-            <img src={play} alt="" />
+            <img src={play} className="w-full" alt="" />
         </div>
       </div>
     </div>
