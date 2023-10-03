@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { FaBars } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
 import loginLogo from "../../../assets/user.png"
+import { useState } from "react";
 
 const Navbar = () => {
+    const [show,setShow] = useState(false)
   const navlinks = (
     <>
       <li className="text-gray-400">
@@ -37,10 +41,19 @@ const Navbar = () => {
     </>
   );
 
+
   return (
+    
     <div className="navbar bg-base-100">
       <div className="navbar-start">
-        <div className="dropdown"></div>
+        <div className="dropdown md:hidden" onClick={()=> setShow(!show)}>
+            {show?<AiOutlineClose className="text-4xl"></AiOutlineClose > :<FaBars className="text-4xl"></FaBars>}
+            <ul className={`absolute bg-base-200 rounded-lg w-36 font-bold top-14 left-0  ${show? ' ':'hidden'}`}>
+                {
+                    navlinks
+                }
+            </ul>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
