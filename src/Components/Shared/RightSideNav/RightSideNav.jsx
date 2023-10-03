@@ -1,6 +1,9 @@
 import { AiFillGithub, AiOutlineGoogle,AiOutlineInstagram } from "react-icons/ai";
 import { LiaFacebookF } from "react-icons/lia";
 import { FaTwitter } from "react-icons/fa6";
+import swim from '../../../assets/qZone1.png';
+import classs from '../../../assets/qZone2.png'
+import play from '../../../assets/qZone3.png'
 const RightSideNav = () => {
   return (
     <div className="h-screen">
@@ -54,10 +57,19 @@ const RightSideNav = () => {
         </div>
       </div>
       {/* Q-zone */}
-      <div>
+      <div className="border bg-base-200 mt-5 p-3">
       <h1 className="text-xl font-semibold text-center md:text-left">
           Q-zone
         </h1>
+        <div>
+            <img src={swim} alt="" />
+        </div>
+        <div>
+            <img src={classs} alt="" />
+        </div>
+        <div>
+            <img src={play} alt="" />
+        </div>
       </div>
     </div>
   );
