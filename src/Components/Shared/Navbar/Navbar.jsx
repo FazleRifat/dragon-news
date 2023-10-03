@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
+import loginLogo from "../../../assets/user.png"
 
 const Navbar = () => {
-  const links = (
+  const navlinks = (
     <>
       <li className="text-gray-400">
         <NavLink
@@ -15,22 +16,22 @@ const Navbar = () => {
       </li>
       <li className="text-gray-400">
         <NavLink
-          to="/"
+          to="/about"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-red-400" : ""
           }
         >
-          Home
+          About
         </NavLink>
       </li>
       <li className="text-gray-400">
         <NavLink
-          to="/"
+          to="/career"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-red-400" : ""
           }
         >
-          Home
+          Career
         </NavLink>
       </li>
     </>
@@ -44,12 +45,13 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
          {
-            links
+            navlinks
          }
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-2">
+        <img src={loginLogo} className="w-12"></img>
+        <a className="btn btn-neutral w-24 rounded-sm">Login</a>
       </div>
     </div>
   );
