@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PiBookmarkSimple } from "react-icons/pi";
 import { AiOutlineShareAlt } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const News = () => {
   const [allNews, setAllNews] = useState([]);
@@ -40,6 +41,7 @@ const News = () => {
               <p className="text-gray-500 ml-4">
                 {news.details.slice(0,300)}
               </p>
+              <p className="ml-4 text-orange-400"><Link to={`/details/${news._id}`}>Read more....</Link></p>
             </div>
           </div>
         </div>

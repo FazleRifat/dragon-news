@@ -67,7 +67,7 @@ const Navbar = () => {
       <div className="navbar-end gap-2">
         <img src={loginLogo} className="w-12"></img>
         {
-          user?<a className="btn btn-neutral w-24 rounded-sm" onClick={handleLogout} >Logout</a>:<a className="btn btn-neutral w-24 rounded-sm" ><Link to='/login' target="_blank">Login</Link></a>
+          user?<a className="btn btn-neutral w-24 rounded-sm" onClick={handleLogout} >Logout</a>:<a className="btn btn-neutral w-24 rounded-sm" ><Link to='/login'>Login</Link></a>
         }
       </div>
     </div>
